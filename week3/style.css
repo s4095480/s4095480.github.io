@@ -1,0 +1,53 @@
+* {
+  color: hotpink;
+  font-weight: bold;
+}
+h1 {
+  color: limegreen;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+h3 {
+  color: red;
+  font-size: 1.5rem;
+}
+.blue-color {
+  color: blue;
+}
+#outcome {
+  color: brown;
+  font-weight: 300;
+  border: 4px dashed violet;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+body {
+  background-color: antiquewhite;
+  font-size: 1.1rem;
+}
+section {
+  /* text-align: center; */
+  border: 1px solid green;
+}
+/* h1 {
+  color: red;
+}
+h2 {
+  color: green;
+}
+h3 {
+  color: blue;
+}
+p {
+  color: gray;
+} */
