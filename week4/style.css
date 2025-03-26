@@ -1,0 +1,29 @@
+body {
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+p {
+  width: 400px;
+  /* border: 1px solid crimson; */
+  margin: 0 auto;
+  height: 200px;
+  /* padding: 30px 10px 50px 20px; */
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(137, 43, 226);
+  border-bottom: dashed 3px rgba(0, 128, 0, 0.665);
+}
+.vcenter {
+  line-height: 160px;
+}
+span {
+  color: aqua;
+  display: inline block;
+}
