@@ -3,7 +3,7 @@
   /* display: grid; */
   /* flex: auto; */
   width: 48%;
-  max-width: 900px;
+  max-width: 600px;
 }
 
 .ques {
@@ -26,7 +26,7 @@ body {
 .rightside {
   float: right;
   width: 48%;
-  max-width: 900px;
+  max-width: 600px;
 }
 .ans {
   background: rgb(239, 238, 238);
