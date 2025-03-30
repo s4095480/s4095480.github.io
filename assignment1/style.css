@@ -1,8 +1,13 @@
+#grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 .leftside {
-  float: left;
+  /* float: left; */
   /* display: grid; */
   /* flex: auto; */
-  width: 48%;
+  /* width: 48%; */
   max-width: 600px;
 }
 
@@ -24,8 +29,8 @@ body {
 }
 
 .rightside {
-  float: right;
-  width: 48%;
+  /* float: right; */
+  /* width: 48%; */
   max-width: 600px;
 }
 .ans {
