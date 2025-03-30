@@ -1,8 +1,9 @@
 .leftside {
   float: left;
-  display: grid;
+  /* display: grid; */
   /* flex: auto; */
   width: 48%;
+  max-width: 900px;
 }
 
 .ques {
@@ -25,6 +26,7 @@ body {
 .rightside {
   float: right;
   width: 48%;
+  max-width: 900px;
 }
 .ans {
   background: rgb(239, 238, 238);
@@ -59,8 +61,8 @@ main {
 img {
   max-width: 100%;
   height: auto;
-  display: block; /* Removes extra spacing below images */
-  margin: 0 auto; /* Centers the image */
+  display: block;
+  margin: 0 auto;
   margin-top: 15px;
   border-radius: 10px;
 }
