@@ -27,3 +27,26 @@ span {
   color: aqua;
   display: inline block;
 }
+nav {
+  border: 1px dashed rgba(229, 229, 203, 0.4);
+  margin-bottom: 40px;
+  padding: 2px 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  min-height: 150px;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+}
+li {
+  /* flex: 1; */
+  background-color: #3c2a21;
+  /* flex-grow: 1; */
+  padding: 0 10px;
+}
