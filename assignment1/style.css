@@ -35,6 +35,7 @@ body {
   /* vertically aligns items to the centre */
   justify-content: center;
   /* horizontally aligns items to the centre */
+  background-color: rgb(58, 58, 58);
 }
 
 .rightside {
@@ -73,6 +74,7 @@ main {
   font-style: normal;
   font-variation-settings: "wdth" 100;
   /* i chose and copied a font from google fonts! */
+  background: white;
 }
 
 #ulans {
