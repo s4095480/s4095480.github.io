@@ -1,14 +1,20 @@
 #grid-container {
+  /* defines a grid layout for the main content */
   display: grid;
+  /* turns the container into a grid */
   grid-template-columns: 1fr 1fr;
+  /* creates two equal columns */
   gap: 20px;
 }
+
 .leftside {
   /* float: left; */
   /* display: grid; */
   /* flex: auto; */
   /* width: 48%; */
+  /* the above were my failed attempts at css, leaving here to show progress */
   max-width: 600px;
+  /* restricts to 600px width */
 }
 
 .ques {
@@ -18,14 +24,17 @@
   padding: 10px;
   color: white;
   border-radius: 10px;
-  margin: 0%;
+  margin: 0%; /* removes any spacing around the question */
 }
 
 body {
   /* font-family: Arial, Helvetica, sans-serif; */
   display: flex;
+  /* using flexbox to align the content */
   align-items: center;
+  /* vertically aligns items to the centre */
   justify-content: center;
+  /* horizontally aligns items to the centre */
 }
 
 .rightside {
@@ -37,14 +46,17 @@ body {
   background: rgb(239, 238, 238);
   padding: 15px;
   border-radius: 10px;
+  /* decided to add curved corners to the questions, answers, and images (and border) to keep a consistent theme throughout the page. */
   margin-top: 15px;
   margin-bottom: 15px;
+  /* adding 15px of space to the top and bottom */
 }
 
 h1 {
   text-align: center;
   color: rgb(36, 189, 255);
   font-size: 2.5rem;
+  /* sets the font size 2.5x the root font size */
   font-weight: bold;
   padding-bottom: 20px;
 }
@@ -54,14 +66,17 @@ main {
   border: rgb(36, 189, 255) solid 10px;
   border-radius: 10px;
   max-width: 900px;
+  /* restricts the width of the main content to 900px */
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
   font-variation-settings: "wdth" 100;
+  /* i chose and copied a font from google fonts! */
 }
 
 #ulans {
+  /* i needed to create a separate id for the unordered list, since it wouldnt apply with the regular .ans class */
   padding: 20px;
   padding-left: 30px;
   border-radius: 10px;
@@ -74,9 +89,12 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  /* makes the image a block element and removes bottom spacing */
   margin: 0 auto;
+  /* centres horizontally */
   margin-top: 15px;
   border-radius: 10px;
+  /* styling the images slightly to have rounded corners and slight gaps.  */
 }
 
 h4 {
@@ -87,8 +105,15 @@ h4 {
 a {
   color: rgb(81, 125, 199);
   font-weight: bold;
+  /* changed the colour of the link to a different blue, made it bold. */
 }
 a:hover {
   color: rgb(36, 189, 255);
   text-decoration: none;
+  /* wanted to be slightly creative with it and change the colour on hover to the same blue used thematically throughout the website, as well as removing the 'decoration' or underline of the link on hover. */
+}
+
+i {
+  font-style: italic !important;
+  /* the italics weren't staying italicised for some reason, so i found that this made it override any other conflicting styles */
 }
