@@ -37,11 +37,16 @@ body {
   background: rgb(239, 238, 238);
   padding: 15px;
   border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 h1 {
   text-align: center;
   color: rgb(36, 189, 255);
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-bottom: 20px;
 }
 
 main {
@@ -61,6 +66,8 @@ main {
   padding-left: 30px;
   border-radius: 10px;
   background: rgb(239, 238, 238);
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 img {
@@ -74,10 +81,12 @@ img {
 
 h4 {
   text-align: center;
+  margin-bottom: 15px;
 }
 
 a {
-  color: rgb(0, 50, 137);
+  color: rgb(81, 125, 199);
+  font-weight: bold;
 }
 a:hover {
   color: rgb(36, 189, 255);
