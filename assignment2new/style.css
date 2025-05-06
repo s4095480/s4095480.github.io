@@ -1,0 +1,186 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* ensures the playlist stays below the controls and isnt pushed to the right (i had to fix this) */
+}
+
+.now-playing {
+  margin: 10px 0;
+  /* margin for spacing */
+}
+
+.now-playing h2 {
+  font-size: 1.2rem;
+  color: #00ffcc;
+  /* smaller font and uses the same colour as the progress bar for visual consistency for the user*/
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 20px 0;
+  width: 100%;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.progress-section {
+  /* spacing the current time, progress bar and total time */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.progress-bar {
+  background-color: #444;
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+#progress-bar-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background-color: #00ffcc;
+  transition: width 0.2s ease;
+}
+
+#playlist {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  /* did this instead of margin-top in case it was messing with it */
+  width: 100%;
+  /* ensuring that it spans the entire full container width */
+  display: block;
+  /* overrding any flex boxes or inline properties */
+  clear: both;
+  /* ensuring no floating elements are pushing it to the right */
+}
+
+#playlist li {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #2b2b2b;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+#playlist li:hover {
+  background-color: #444;
+}
+
+.volume-controls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+#current-time,
+#total-time {
+  font-size: 0.9rem;
+  color: #00ffcc;
+  /* again wanted to have the same colour to ensure visual consistency throughout the whole page */
+  width: 40px;
+  text-align: center;
+}
+/* aligned the times neatly on either side of the progress bar */
+#current-time {
+  text-align: right;
+}
+#total-time {
+  text-align: left;
+}
+
+* {
+  box-sizing: border-box;
+  /* did this to ensure padding and borders werent affecting the width to prevent layout shifts because the playlist/songs were still appearing to the right for some reason even though i changed it 3 times */
+}
+
+.flip-card {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  /* creates the 3d effect of flipping */
+  margin: 10px 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  overflow: hidden;
+  /* hides the back side when it's not flipped */
+}
+.flip-card-front {
+  background-color: #2b2b2b;
+}
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* styles the front with a full size image and the back text using the blue colour for consistency */
+}
+
+.flip-card-back {
+  background-color: #2b2b2b;
+  color: #fff;
+  transform: rotateY(180deg);
+  /* flips the back side */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.flip-card-back h3 {
+  font-size: 1.2rem;
+  margin: 0 0 10px 0;
+  color: #00ffcc;
+}
+.flip-card-back p {
+  font-size: 0.9rem;
+  margin: 0;
+}
