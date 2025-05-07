@@ -1,5 +1,11 @@
 // theres probably going to be a lot of notes here, i apologise, a lot of it was actually for my own reference so i wouldnt get confused. i know the limit was 300-500, i might be way over that so i apologise!!
 //also i did use ai to 'clean up' a lot of the code after, mainly because i did include things that repeated, so it essentially just got rid of the unnecessary code/elements and rearranged some things
+// youtube tutorial i used https://www.youtube.com/playlist?list=PLQfqQHJBFM1-58ouvTLQgrBKCEV67o0ow
+//card flipping https://www.w3schools.com/howto/howto_css_flip_card.asp
+// and https://codepen.io/wochap/pen/BzvOep
+//understanding arrays https://www.w3schools.com/jS/js_arrays.asp
+// more arrays and index https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+
 const audio = document.getElementById("audio"); //references audio
 const playPauseBtn = document.getElementById("play-pause-btn"); //references the play/pause button
 const playPauseImg = document.getElementById("play-pause-img"); //references the play/pause image
@@ -92,8 +98,9 @@ function formatTime(seconds) {
   // calculates the minutes
   const secs = Math.floor(seconds % 60);
   //   calculates the remaining seconds
-  return `${minutes}:${secs < 10 ? "0" : ""}${secs}`; //this confused me so i did have to watch a youtube video to understand and figure this out
+  return `${minutes}:${secs < 10 ? "0" : ""}${secs}`; //this confused me so i did have to search up to understand and figure this out
   // but as i understand it, this formats it as MM:SS and adds a zero at the front if the seconds are less than 10
+  // https://stackoverflow.com/questions/6312993/javascript-seconds-to-time-string-with-format-hhmmss
 }
 
 // Toggle play/pause button clicks
