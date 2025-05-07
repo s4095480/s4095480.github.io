@@ -3,31 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Audio Player</title>
+    <title>Flipsody Audio Player</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
     <script src="script.js" defer></script>
-  </head>
+    <!-- title and linking the style sheets (i just now realised i forgot to link reset.css, i just did it so i hope its okay and didnt break anything)-->
   <body>
+    <!-- shows the visible content on the page -->
     <div class="container">
+        <!-- main container for centreing and organising content -->
       <h1>Flipsody Audio Player</h1>
+      <!-- page title displayed at the top -->
+       <!-- i decided to use the name flipsody to be a play on words to be SIMILAR to 'spotify' since this is a music player -->
+<!-- and i included the 'flip' in the name to hopefully let the user know to click on the image and to tell them that it flips -->
+ <!-- i understand that the clicking on the image isnt entirely intuitive for the user but my intention was for it to be a cool little feature that the user can do if they explore, like an easter egg -->
 
       <!-- Flippy Card thingy -->
       <div class="flip-card">
+        <!-- container for the flip card effect -->
         <div class="flip-card-inner">
           <!-- rotates to make the flippy effect -->
           <div class="flip-card-front">
             <!-- shows the track image -->
             <img
               id="track-image"
-              src="https://images.unsplash.com/photo-1470225620780-d4b28f2e5b74?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
+              src="https://i.pinimg.com/1200x/05/7f/3e/057f3ec7ec8ce899d57c70d131d2dff9.jpg"
               alt="Track Image"
             />
+            <!-- the image is meant to be a placeholder with a grey background and a white musical note, and changes once a track is playing -->
           </div>
           <div class="flip-card-back">
             <!-- shows the track name  -->
-            <h3 id="track-info-title">Hes</h3>
-            <p id="track-info">Electronic track from IM-2250</p>
-            <!-- and brief information about it -->
+            <h3 id="track-info-title">No Track Playing</h3>
+            <p id="track-info">Select a track to start</p>
+            <!-- and brief information about it, prompting the user to select a track to play-->
           </div>
         </div>
       </div>
@@ -38,14 +47,21 @@
       </div>
       <!-- Audio Element -->
       <audio id="audio">
+        <!-- an audio player element for playing tracks -->
         <source src="songs/song1.mp3" type="audio/mp3" />
+        <!-- this was just a place holder, it isnt being used but kept it anyway since it wasnt doing any harm and was being overridden by js anyway -->
         Your browser does not support the audio element.
+        <!-- text for browsers that dont support the <audio> element -->
+            <!-- side note - i wonder which browsers dont support it? -->
       </audio>
 
       <!-- Controls -->
       <div class="controls">
+        <!-- container for playback and volume controls -->
         <div class="button-group">
+            <!-- group for control buttons for playback -->
           <button id="previous-btn">
+            <!-- button to play the previous track -->
             <img
               id="previous-img"
               src="https://img.icons8.com/ios-glyphs/30/ffffff/skip-to-start--v2.png"
@@ -54,9 +70,11 @@
               height="30"
             />
             <!-- i discovered that putting ffffff in the link turned the colour of the icons from icons8 to white instead of black. this created more colour contrast on the page which makes it more accessible for users. 
-             originally i was going to change the background of the container to another colour but realised it didnt have much colour contrast when i changed it to white/grey/cream (some elements on the page are already grey, some are a teal, and some are black. making it white wouldn't have worked well with the teal and i did like the teal colour against the dark background) -->
+             originally i was going to change the background of the container to another colour but realised it didnt have much colour contrast when i changed it to white/grey/cream (some elements on the page are already grey, some are a teal, and some are black. 
+             making it white wouldn't have worked well with the teal and i did like the teal colour against the dark background) -->
           </button>
           <button id="play-pause-btn">
+            <!-- button to toggle the play/pause -->
             <img
               id="play-pause-img"
               src="https://img.icons8.com/ios-glyphs/30/ffffff/play--v1.png"
@@ -73,21 +91,28 @@
               width="30"
               height="30"
             />
+            <!-- icon for the next track, made it white for contrast -->
           </button>
         </div>
         <!-- Progress section -->
-        <!-- originally had this as progress and volume, but then i changed my mind and wanted to have the play buttons first, then progress bar below, and then volume underneath to create a centred look (originally had the volume to the right of the progress bar, didn't seem right or symmetrical) -->
+        <!-- originally had this as progress and volume, but then i changed my mind and wanted to have the play buttons first, 
+         then progress bar below, and then volume underneath to create a centred look 
+         (originally had the volume to the right of the progress bar, didn't seem right or symmetrical) -->
         <div class="progress-section">
+            <!-- container for the progress bar and time displays -->
           <span id="current-time">0:00</span>
           <div class="progress-bar">
             <span id="progress-bar-fill"></span>
+            <!-- fills to show the playback progress -->
           </div>
           <span id="total-time">0:00</span>
           <!-- this allows for the total time to be on the right side for everything to be symmetrical -->
         </div>
 
         <div class="volume-controls">
+            <!-- container for the volume control buttons  -->
           <button id="decrease-volume-btn">
+            <!-- button to decrease the volume -->
             <img
               id="decrease-volume-img"
               src="https://img.icons8.com/ios-glyphs/30/ffffff/low-volume.png"
@@ -95,9 +120,11 @@
               width="30"
               height="30"
             />
+            <!-- icon for decreasing volume, made it white for contrast -->
           </button>
 
           <button id="increase-volume-btn">
+            <!-- button to increase the volume -->
             <img
               id="increase-volume-img"
               src="https://img.icons8.com/ios-glyphs/30/ffffff/high-volume--v1.png"
@@ -105,9 +132,11 @@
               width="30"
               height="30"
             />
+            <!-- icon for increasing the volume and making it white for contrast again -->
           </button>
 
           <button id="mute-unmute-btn">
+            <!-- button to toggle mute/unmute -->
             <img
               id="mute-unmute-img"
               src="https://img.icons8.com/ios-glyphs/30/ffffff/no-audio--v1.png"
@@ -115,33 +144,41 @@
               width="30"
               height="30"
             />
+            <!-- icon for mute/unmute. starts as unmute and then when you click on it turns to the mute icon (shown here is only the unmute icon) -->
           </button>
         </div>
       </div>
-      <!-- this isnt really relevant but i accidentally included an extra div closing tag which caused the playlist to appear to the right side and made me troubleshoot for about 30 minutes. i feel like this is the epitome of coding. i just wanted you to know that i spent so long trying to fix something over nothing :'( ) -->
+      <!-- this isnt really relevant but i accidentally included an extra div closing tag which caused the playlist to appear to the right side 
+       and made me troubleshoot for about 30 minutes. i feel like this is the epitome of coding. i just wanted you to know that i spent so long 
+       trying to fix something over nothing :'( ) -->
 
       <!-- Playlist -->
       <ul id="playlist">
+        <!-- unordered list for the playlist -->
         <li
           data-src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Hes.mp3"
         >
           Hes
         </li>
+        <!-- list item for the first track with the data-src for the audio url to be included -->
         <li
           data-src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Dry-Down-feat-Ben-Snaath.mp3"
         >
           Dry Down feat Ben Snaath
         </li>
+        <!-- second track -->
         <li
           data-src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Leapt.mp3"
         >
           Leapt
         </li>
+        <!-- third track -->
         <li
           data-src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/p-hase_Water-Feature.mp3"
         >
           Water Feature
         </li>
+        <!-- fourth track -->
       </ul>
     </div>
   </body>

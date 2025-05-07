@@ -1,55 +1,82 @@
 body {
+  /* styling fpr the entire page */
   font-family: Arial, sans-serif;
+  /* clean readable font that most computers can run, i know its basic but it works! */
   background-color: #1c1c1c;
+  /* dark background for high contrast and a clean and modern look */
   color: #fff;
+  /* again white for contrast */
   display: flex;
+  /* flexbox for layout */
   justify-content: center;
+  /* stacks vertically */
   align-items: center;
+  /* centres horizontally */
   height: 100vh;
+  /* making sure that the body fills the viewport height */
   margin: 0;
+  /* removes default margins (i was having issues earlier that i mention somwehere throughoout this) */
 }
 
+/* main container for the player */
 .container {
   text-align: center;
+  /* centres text thats in the container */
   width: 90%;
+  /* limits width to 90% of the viewport so to not take up the entire thign */
   max-width: 500px;
+  /* caps the width to 500px for larger screens */
   display: flex;
+  /* flexbox */
   flex-direction: column;
+  /* stacks vertically */
   align-items: center;
+  /* centres horizontally */
   /* ensures the playlist stays below the controls and isnt pushed to the right (i had to fix this) */
 }
 
 .now-playing {
+  /* now playing section */
   margin: 10px 0;
   /* margin for spacing */
 }
 
 .now-playing h2 {
+  /* now playing heading */
   font-size: 1.2rem;
   color: #00ffcc;
   /* smaller font and uses the same colour as the progress bar for visual consistency for the user*/
 }
 
 .controls {
+  /* controls section */
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
+  /* adds spacing between control groups, increased it from 1rem */
   margin: 20px 0;
+  /* adds vertical spacing */
   width: 100%;
+  /* fills the container */
 }
 
 button {
   background: none;
   border: none;
   cursor: pointer;
+  padding: 2px;
+  /* added padding for a larger clickable area for the user */
 }
 
 .button-group {
+  /* group for the playback buttons */
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  /* adds spacing between buttons, was originally 1rem but changed it to 1.5 to get it back to where it was before i linked reset.css */
   justify-content: center;
 }
+
 .progress-section {
   /* spacing the current time, progress bar and total time */
   display: flex;
@@ -59,8 +86,11 @@ button {
 }
 
 .progress-bar {
+  /* progress bar container */
   background-color: #444;
+  /* grey background for the unfilled portion */
   flex: 1;
+  /* expands it to fill the available space */
   height: 6px;
   border-radius: 3px;
   overflow: hidden;
@@ -68,11 +98,16 @@ button {
 }
 
 #progress-bar-fill {
+  /* filled portion of the progress bar */
   display: block;
   height: 100%;
+  /* fills the bars height */
   width: 0%;
+  /* begins empty */
   background-color: #00ffcc;
+  /* teal colour for consistency and progress */
   transition: width 0.2s ease;
+  /* smooth width transition/ change animation */
 }
 
 #playlist {
@@ -89,22 +124,31 @@ button {
 }
 
 #playlist li {
+  /* playlist items in a list */
   padding: 10px;
+  /* spacing */
   cursor: pointer;
+  /* shows the pointer on hover */
   background-color: #2b2b2b;
   margin-bottom: 5px;
+  /* spacing between items */
   border-radius: 4px;
+  /* rounds the corners by 4px */
   text-align: center;
 }
 
 #playlist li:hover {
+  /* the hover effect for all playlist items */
   background-color: #444;
 }
 
 .volume-controls {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
+  /* increased this from 0.5 rem */
   justify-content: center;
+  margin-top: 10px;
+  /* added spacing above after i forgot to link reset.css */
 }
 
 #current-time,
@@ -115,7 +159,7 @@ button {
   width: 40px;
   text-align: center;
 }
-/* aligned the times neatly on either side of the progress bar */
+/* aligned the times neatly on either side of the progress bar also done while i was troubleshooting that div closing tag */
 #current-time {
   text-align: right;
 }
@@ -129,44 +173,65 @@ button {
 }
 
 .flip-card {
+  /* flip card container */
   width: 200px;
   height: 200px;
+  /* width and height of the flip card itself */
   perspective: 1000px;
   /* creates the 3d effect of flipping */
   margin: 10px 0;
+  /* vertical spacing */
 }
 
 .flip-card-inner {
+  /* inner container that rotates for the flippy effect */
   position: relative;
+  /* positions absolutely */
   width: 100%;
   height: 100%;
+  /* fills the container */
   text-align: center;
+  /* centres the text */
   transition: transform 0.6s;
+  /* making the flippy animation over 0.6 seconds and makes it smooth */
   transform-style: preserve-3d;
+  /* makes the transformation 3d */
 }
 .flip-card-front,
 .flip-card-back {
+  /* styles front and back */
   position: absolute;
+  /* overlays the front and back */
   width: 100%;
   height: 100%;
+  /* fills the container */
   backface-visibility: hidden;
+  /* hides the back side when its flipped */
   border-radius: 8px;
+  /* rounds the corners by 8 px */
   overflow: hidden;
-  /* hides the back side when it's not flipped */
+  /* clips the content to the rounded corners */
 }
 .flip-card-front {
+  /* front side of the flip card */
   background-color: #2b2b2b;
+  /* dark background for the image container */
 }
 .flip-card-front img {
+  /* image on the front side */
   width: 100%;
   height: 100%;
+  /* fills it */
   object-fit: cover;
   /* styles the front with a full size image and the back text using the blue colour for consistency */
 }
 
 .flip-card-back {
+  /* back of the card */
   background-color: #2b2b2b;
+  /* dark background */
   color: #fff;
+  /* white text for contrast and readability */
   transform: rotateY(180deg);
   /* flips the back side */
   display: flex;
@@ -174,13 +239,62 @@ button {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  /* adds spacing */
 }
+
 .flip-card-back h3 {
+  /* track name on the back side */
   font-size: 1.2rem;
+  /* slightly larger for emphasis */
   margin: 0 0 10px 0;
+  /* removes the top and bottom margin but adds bottom spacing */
   color: #00ffcc;
+  /* teal colour thats consistent throughout the page */
 }
+
 .flip-card-back p {
+  /* track information on the back side */
   font-size: 0.9rem;
+  /* smaller text for secondary info */
   margin: 0;
+  /* removes default margins */
+}
+
+/* i remembered i forgot to link reset.css so now im trying to get the text size and spacing back to what it was before */
+h1 {
+  font-size: 2em; /* meant to be around 32px */
+  font-weight: bold;
+  /* makes it bold */
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em; /* meant to be around 24px */
+  font-weight: bold;
+  /* makes it bold */
+  margin: 0.83em 0;
+  color: #00ffcc; /* Maintains teal color */
+}
+
+h3 {
+  font-size: 1.3em; /* Slightly larger than body text */
+  font-weight: bold;
+  /* making it bold */
+  margin: 0 0 10px 0;
+  /* bottom margin */
+  color: #00ffcc;
+  /* teal colour again to maintain consistency */
+}
+
+p {
+  /* paragraph size */
+  font-size: 1em; /* around 16px */
+  margin: 0; /* maintains minimal margins as before */
+}
+
+button img {
+  /* added images of the buttons to ensure consistency */
+  width: 30px;
+  height: 30px;
+  /* also in the hopes that it wont impact reset.css's icon font styling */
 }
