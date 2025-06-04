@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iPod Classic Music Timeline</title>
+    <!-- Page title that's descriptive and for nostalgia -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts for Silkscreen, backup to the main font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google font for that's SIMILAR to Chicago, the original iPod font -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="ipod">
+      <!-- iPod container, styled as a classic silver iPod (Classic) -->
+      <!-- Inspiration is mostly from a mixture of all versions of the iPod classics -->
+      <div class="screen">
+        <!-- 250px LCD screen for the content being displayed -->
+        <div id="default-screen">
+          <!-- Default screen, shown on load. Somewhat mimics the iPod's main menu -->
+          <h1>2010s #1 Hits</h1>
+          <!-- Title implies that it's the billboard top songs without explicitly saying it -->
+          <!-- in the least amount of words  -->
+          <!-- also its somewhat nostalgic to old ipod playlist names like 'top 25 most played' (i do think this still exists on apple music actually!) -->
+        </div>
+        <img id="album-cover" src="" alt="Album Cover" class="hidden" />
+        <!-- Album cover, hidden on load -->
+        <div id="song-details" class="hidden">
+          <!-- Song details, hidden by default -->
+          <h2 id="song-title">Tik Tok</h2>
+          <!-- Song title is h2 for hierarchy -->
+          <h3 id="song-year">2010</h3>
+          <!-- same with h3 for the song year, relatively important considering that this is a timeline -->
+          <p id="song-artist">Kesha</p>
+          <p id="song-album">Album: Animal</p>
+          <p id="song-weeks">Weeks at #1: 9</p>
+          <p id="song-release">Release Date: Aug 7, 2009</p>
+          <p id="song-genre">Genre: Dance-Pop</p>
+          <!-- Other information that's interesting to know! -->
+        </div>
+      </div>
+      <div class="scroll-wheel">
+        <!-- Scroll wheel with buttons (doesn't actually scroll but the original iPod did!) -->
+        <button id="menu-btn" class="wheel-btn menu">
+          <!-- Menu button are words instead of an icon like the rest to mimic the actual iPod design -->
+          <span>MENU</span>
+        </button>
+        <button id="previous-btn" class="wheel-btn previous">
+          <!-- Previous button -->
+          <img
+            src="https://img.icons8.com/ios-glyphs/30/c0c0c0/skip-to-start--v2.png"
+            alt="Previous"
+            width="30"
+            height="30"
+          />
+          <!-- All the buttons are grey to mimic the actual iPod's colour scheme -->
+        </button>
+        <button id="next-btn" class="wheel-btn next">
+          <!-- Next button -->
+          <img
+            src="https://img.icons8.com/ios-glyphs/30/c0c0c0/end--v2.png"
+            alt="Next"
+            width="30"
+            height="30"
+          />
+        </button>
+        <button id="play-pause-btn" class="wheel-btn play-pause">
+          <!-- Play/pause button -->
+          <img
+            id="play-pause-img"
+            src="https://img.icons8.com/ios-glyphs/30/c0c0c0/play--v1.png"
+            alt="Play"
+            width="30"
+            height="30"
+          />
+        </button>
+        <div class="center-circle"></div>
+        <!-- Centre of scroll wheel -->
+      </div>
+    </div>
+    <audio id="audio">
+      <!-- Audio player -->
+      <source
+        src="https://incompetech.com/music/royalty-free/mp3-royaltyfree/Dance%20of%20the%20Sugar%20Plum%20Fairy.mp3"
+        type="audio/mp3"
+      />
+      <!-- Default royalty-free song -->
+    </audio>
+    <footer>
+      <!-- Credit for royalty-free music -->
+      <p>
+        Music by <a href="https://incompetech.com">Kevin MacLeod</a>, licensed
+        under Creative Commons Attribution 4.0.
+      </p>
+    </footer>
+  </body>
+</html>

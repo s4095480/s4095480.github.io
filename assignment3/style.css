@@ -1,0 +1,254 @@
+/* Body styles for making sure that the iPod is in the centre of the screen*/
+body {
+  font-family: Arial, sans-serif;
+  /* Clean font that it can easily fall back on */
+  background-color: #1c1c1c;
+  /* Dark, clean, cool background so as to not take away the focus from the iPod itself*/
+  color: #ffffff;
+  /* White text for contrast and accessibility */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+/* iPod container */
+.ipod {
+  background: linear-gradient(#c0c0c0, #e0e0e0);
+  /* gradient for a 'silver' ipod, which is the traditionally iconic ipod colour */
+  border-radius: 20px;
+  padding: 20px;
+  width: 300px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  /* subtle shadow */
+}
+
+/* Screen styles */
+.screen {
+  background-color: #d8e6e0; /* Slightly greener LCD */
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+  box-shadow: inset 0 0 15px rgba(0, 255, 200, 0.3);
+  /* soft glow */
+}
+
+/* Scan lines oldschool effect without being overwhelming to the text */
+.screen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.02) 2px,
+    rgba(0, 0, 0, 0.02) 4px
+  ); /* Faint horizontal lines */
+  pointer-events: none; /* Allow clicks to pass through */
+  /* https://www.w3schools.com/cssref/func_repeating-linear-gradient.php this helped me with the repeating linear gradient */
+}
+
+/* Album cover image */
+#album-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* the content was aligning to the left for some reason, so added this and removed display:flex; to be able to make sure that it would align to the centre properly */
+}
+
+/* Song details, hidden by default */
+#song-details {
+  text-align: center;
+  padding: 20px;
+  font-family: "VT323", "Silkscreen", monospace;
+  /* applied the VT323 font since it's the most similar thats available on google fonts that is similar to the original Chicago font (original iPod classic font). 
+  i have Silkscreen as a backup which is what I was originally going to use for a more 'nostalgic/oldschool' look. */
+  color: #000000;
+  background-color: #e6ece8;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Hide elements with this class */
+.hidden {
+  display: none;
+}
+
+/* Song title */
+#song-title {
+  font-family: "VT323", "Silkscreen", monospace;
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4), 0 0 2px rgba(255, 255, 255, 0.2);
+  /* Enhanced bold effect for song title */
+}
+/* Song details text */
+#song-artist,
+#song-album,
+#song-weeks,
+#song-release,
+#song-genre {
+  font-size: 1em;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  /* text shadow gives it slight depth like its actually pressed into the lcd */
+}
+
+/* Scroll wheel container */
+.scroll-wheel {
+  width: 220px;
+  height: 220px;
+  /* wanted to make this almost exactly the same width as the screen.
+  I have the iPod classic 7th gen next to me and the screen is more rectangular and the wheel doesnt line up with the edge of the screen.
+  however, I also have the 4th gen?? next to me and it's a lot more retro.the screen is ALMOST square and the edge aligns perfectly. So i'm basing this design mostly off the older ipod classic generations.
+  I also am keeping the screen completely square, so that the album covers fit perfectly. */
+  background: linear-gradient(#ffffff, #f0f0f0);
+  /* White gradient for contrast and for a little depth*/
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center circle of scroll wheel */
+.center-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: inset 2px 2px 4px #aaa, inset -2px -2px 4px #fff;
+  /* neat box shadow to look a little more realistic and be less basic than simply using a stroke */
+}
+
+/* Wheel button styles */
+.wheel-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  padding: 10px;
+}
+
+/* Menu button (top) */
+.wheel-btn.menu {
+  top: 10px;
+}
+
+.wheel-btn.menu span {
+  font-family: Arial, Helvetica, sans-serif;
+  /* chose a fairly simple font as to try and match the sans serif font that the actual iPod classic has */
+  color: #c0c0c0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Previous button (left) */
+.wheel-btn.previous {
+  left: 10px;
+}
+
+/* Next button (right) */
+.wheel-btn.next {
+  right: 10px;
+}
+
+/* Play/pause button (bottom) */
+.wheel-btn.play-pause {
+  bottom: 10px;
+}
+
+/* Button images */
+.wheel-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Button hover effect */
+.wheel-btn:hover img,
+.wheel-btn:hover span {
+  opacity: 0.7;
+  /* Slight fade on hover */
+}
+
+/* Footer styles for music credit */
+footer {
+  margin-top: 20px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+/* Footer link styles */
+footer a {
+  color: #b0c4de;
+  /* Keeping the colour different as to distinguish links from regular text, but also still within the main colour scheme */
+  text-decoration: none;
+}
+
+/* Link hover effect */
+footer a:hover {
+  text-decoration: underline;
+  /* Underline on hover */
+}
+
+/* centred the title, used the silkscreen font for 'nostalgia' (wanted to not use something basic even if its a bit chunky) and black text for LCD contrast */
+#default-screen {
+  background-color: #e6ece8;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "VT323", "Silkscreen", monospace;
+  color: #000000;
+}
+#default-screen h1 {
+  font-family: "VT323", "Silkscreen", monospace;
+  font-size: 1.4em;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin: 0;
+  /* it was aligning to the left so i wanted to make sure it was staying directly in the middle! */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  /* Subtle bold effect */
+}
+
+#song-year {
+  font-family: "VT323", "Silkscreen", monospace;
+  font-size: 1.2em;
+  /* wanted it to be a little bigger to create hierarchy */
+  color: #000000;
+  margin: 5px 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
