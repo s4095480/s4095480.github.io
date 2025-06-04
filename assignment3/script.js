@@ -104,6 +104,8 @@ const songs = [
       "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Funky%20Chunk.mp3",
     genre: "Funk-Pop",
   },
+  //   The album/song cover for Uptown Funk is just like that (with the white borders)
+  // It doesn't look very pretty, but I wanted to stay consistent with using the same covers as each other (from Wikipedia)
   {
     title: "Love Yourself",
     year: 2016,
@@ -274,3 +276,7 @@ updateScreen();
 // I aligned the song details to the top as to mirror the actual iPod feel, where it would normally have a progress bar and other things (relative to being an actual music player).
 // However, i decided against actually including the player details (such as a progress bar) to take away from the whole idea of being a music player and more of an interactive timeline.
 // It also could be ideal for teaching music history or web development
+
+// One of the biggest challenges I faced was balancing aesthetics with functionality. I wanted the UI to feel nostalgic but still modern enough for users to navigate intuitively//
+//This meant that i needed to simplify the choices of colour and avoiding overly complex layouts. While adding animations or transitions for song changes would have enhanced the visual experience, I decided against it to keep the prototype minimal and focused on the main interaction//
+// It would be interesting to explore how to incorporate user customisation features (like being able to favourite songs or create playlists), but for this prototype, I kept it intentionally simple and limited to ensure clarity of interaction and actually complying with the assignment restrictions//
